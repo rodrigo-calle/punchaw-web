@@ -1,0 +1,17 @@
+.large-c-button {
+    height: 66px;
+    width: 100%;
+    border-radius: 20px;
+    
+
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+    .large-c-button__title {
+        font-size: 32px;
+        margin: 0;
+        margin-left: 25px;
+    }
+}

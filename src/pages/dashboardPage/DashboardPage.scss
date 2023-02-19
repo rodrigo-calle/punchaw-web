@@ -1,0 +1,20 @@
+.dashboard-page {
+    width: 85%;
+    margin: 5px auto;
+    .user-name {
+        margin: 0;
+        font-size: 36px;    
+    }
+
+    .buttons-container {
+        padding: 10px 0px;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+
+    }
+}

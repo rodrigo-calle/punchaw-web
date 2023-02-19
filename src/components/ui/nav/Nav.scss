@@ -1,0 +1,16 @@
+.main-nav {
+    width: 85%;
+    height: 71px;
+    border-radius: 20px;
+    background-color: #9047FF;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .main-nav__title {
+        font-size: 36px;
+        color: #fff;
+        margin: 0;
+    }
+}

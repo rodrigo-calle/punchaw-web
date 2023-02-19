@@ -1,0 +1,12 @@
+.habit-list-page {
+    width: 100%;
+    .buttons-container {
+        width: 85%;
+        margin: 5px auto;
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+}
