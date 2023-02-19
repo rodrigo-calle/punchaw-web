@@ -20,7 +20,7 @@ type Headers = {
 }
 type Props = {
     rowsData: RowData[]; 
-    headers: Headers[];
+    headers: Array<Headers>;
 }; 
 
 export default function BasicTable(props: Props) {
@@ -41,34 +41,42 @@ export default function BasicTable(props: Props) {
     //     createData('Cupcake', 305, 3.7, 67, 4.3),
     //     createData('Gingerbread', 356, 16.0, 49, 3.9),
     //   ];
-      
+    console.log(props.headers)
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>        
-            {
-                props.headers.map((header: Headers) => {
-                    <TableRow>
-                        <TableCell>
-                            {`${header.header} \n ${header.value ?? ''}` }
-                        </TableCell>
-                    </TableRow>
-                })
-            }
+        <TableHead>  
+          <TableRow>    
+            <TableCell>{props.headers[0].header}</TableCell>
+            <TableCell align="left">
+               {`${props.headers[1].header}`}
+               <br /> 
+               {`\n${props.headers[1].value}`}
+            </TableCell>
+            <TableCell align="left">
+              {`${props.headers[2].header}`}
+              <br /> 
+              {`\n${props.headers[2].value}`}
+            </TableCell>
+            <TableCell align="left">
+              {`${props.headers[3].header}`} 
+              <br /> 
+              {`\n${props.headers[3].value}`}
+              </TableCell>
+          </TableRow>                       
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              key={row.day.toLocaleDateString()}
+              // sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.name}
+                {row.day.toLocaleDateString()}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="left">{row.loss? 'true' : 'false'}</TableCell>
+              <TableCell align="left">{row.medium? 'true' : 'false'}</TableCell>
+              <TableCell align="left">{row.higth? 'true' : 'false'}</TableCell>
             </TableRow>
           ))}
         </TableBody>
